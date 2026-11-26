@@ -1,9 +1,23 @@
 {
-  "rewrites": [{ "source": "/k/:kod", "destination": "/k.html" }],
+  "rewrites": [
+    {
+      "source": "/k/:kod",
+      "destination": "/k.html"
+    },
+    {
+      "source": "/d/:kod",
+      "destination": "/d.html"
+    }
+  ],
   "headers": [
     {
       "source": "/.well-known/apple-app-site-association",
-      "headers": [{ "key": "Content-Type", "value": "application/json" }]
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json"
+        }
+      ]
     }
   ]
 }

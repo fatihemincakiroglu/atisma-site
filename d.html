@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atışma · Arkadaş daveti</title>
+<meta property="og:title" content="Atışma'da seninle kapışmak istiyorlar!">
+<meta property="og:description" content="Davete katıl, aynı anda aynı soruları cevaplayın.">
+<link rel="stylesheet" href="/_stil.css">
+<style>
+  .kod{display:flex;gap:6px;justify-content:center;margin:20px 0}
+  .kod{flex-wrap:wrap}.kod span{width:30px;font-size:22px;height:58px;border-radius:12px;background:#fff;color:#1E1A4D;font:800 30px/58px system-ui;text-align:center;box-shadow:0 5px 0 #B9B4E6}
+  .btn{display:block;text-align:center;text-decoration:none;font-weight:800;border-radius:16px;padding:16px;margin:12px 0}
+  .ana{background:var(--sari);color:#2A1E00;box-shadow:0 5px 0 #C29400}
+  .ikinci{background:var(--kart);color:#fff;box-shadow:0 5px 0 var(--koyu)}
+  .orta{text-align:center}
+</style>
+</head>
+<body>
+<main class="orta">
+  <h1>Atışma’ya davetlisin! 🎁</h1>
+  <p>Arkadaşın seni <strong>Atışma</strong>’ya çağırıyor. İlk maçını bitirince ikiniz de 100 altın kazanırsınız.</p>
+  <div class="kod" id="kod" aria-label="Davet kodu"></div>
+  <a class="btn ana" id="ac" href="#">Uygulamada aç</a>
+  <a class="btn ikinci" href="https://apps.apple.com/app/id6839246836">App Store’dan indir</a>
+  <p><small>Uygulamayı indirdikten sonra kullanıcı adını seç ve Ayarlar › “Davet kodun var mı?” kısmına yukarıdaki kodu gir.</small></p>
+</main>
+<script>
+  var kod = (location.pathname.split('/d/')[1] || '').replace(/[^A-Za-z0-9]/g, '').toUpperCase().slice(0, 10);
+  var kutu = document.getElementById('kod');
+  kod.split('').forEach(function (c) { var s = document.createElement('span'); s.textContent = c; kutu.appendChild(s); });
+  kutu.setAttribute('aria-label', 'Davet kodu: ' + kod.split('').join(' '));
+  document.getElementById('ac').href = 'atisma://d/' + kod;
+</script>
+</body>
+</html>
