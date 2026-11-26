@@ -3,7 +3,10 @@
     "details": [
       {
         "appIDs": ["BPJK96C2FN.com.fatihemincakiroglu.atisma"],
-        "components": [{ "/": "/k/*", "comment": "Davet bağlantıları" }]
+        "components": [
+          { "/": "/k/*", "comment": "Maç davetleri" },
+          { "/": "/d/*", "comment": "Arkadaş davetleri" }
+        ]
       }
     ]
   }
